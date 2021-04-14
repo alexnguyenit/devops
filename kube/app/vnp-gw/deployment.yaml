@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # tên của deployment
+  name: vnp-gw
+  namespace: vnp
+spec:
+  # số POD tạo ra
+  replicas: 1
+
+  # thiết lập các POD do deploy quản lý, là POD có nhãn  "app=vnp-gw"
+  selector:
+    matchLabels:
+      app: vnp-gw
+
+  # Định nghĩa mẫu POD, khi cần Deploy sử dụng mẫu này để tạo Pod
+  template:
+    metadata:
+      name: vnp-gw
+      labels:
+        app: vnp-gw
+    spec:
+      containers:
+        - name: vnp-gw
+          image: hoangnguyenngoctb/vnp-gw:1.0.1
+          ports:
+            - containerPort: 9001
+          envFrom:
+            - configMapRef:
+                name: env-configmap-4
+          # nodeSelector:
+          #   disktype: ssd
+          # resources:
+          #   limits:
+          #     memory: "16384Mi"
+          #     cpu: "500m"
+          volumeMounts:
+            - name: app-persistent-storage
+              mountPath: /var/server/logs
+      volumes:
+        - name: app-persistent-storage
+          persistentVolumeClaim:
+            claimName: pv-claim-app

@@ -1,0 +1,6 @@
+sudo docker rm `docker ps -a -q`
+sudo docker rmi `docker images -q`
+sudo kubeadm reset 
+sudo yum remove kubeadm kubectl kubelet kubernetes-cni kube*    
+sudo yum autoremove 
+sudo rm -rf ~/.kube

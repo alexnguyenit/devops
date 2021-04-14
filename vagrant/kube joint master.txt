@@ -1,0 +1,3 @@
+kubeadm join 172.16.16.100:6443 --token wd8by6.fgwe8zrt826zurlf \
+    --discovery-token-ca-cert-hash sha256:71cb925c5e52326247a1cd53299d9538e2fb817306dfe4d60622b870b32f722d \
+    --control-plane --certificate-key 8bad5a4daaa5e4aa5b63143bc1213200a4435a7f14185991d5432209bcfe46fe --apiserver-advertise-address 172.16.16.102

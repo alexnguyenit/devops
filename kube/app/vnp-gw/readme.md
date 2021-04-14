@@ -1,0 +1,5 @@
+IP SERVER
+SSH Private: 172.16.135.2
+Public: 202.134.19.220
+
+202.134.19.220:30901/jobs-api

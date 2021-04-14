@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-configmap-4
+  namespace: vnp
+data:
+  PORT: "9001"
+  NODE_ENV: "sandbox"
+  VERSION: "v46.0"
+  CONSUMER_KEY: "3MVG9iLRabl2Tf4gr86vkEZj9L.vd8vrhn9RTezhzKRTl9MBN241HKK2THi_us3O5d9FNQXwVotI1Zg1lRuFp"
+  CONSUMER_SECRET: "B63176167C95106AAB70F2A7A4711B4C4DD29A8106E738AA429BD7437D788F8D"
+  CONSUMER_TOKEN_URL: "https://test.salesforce.com/services/oauth2/token"
+  INSTANCE_URL: "https://vnpost--full.my.salesforce.com"
+  SFUSERNAME: "admin2019@vnpost.com.vn"
+  PASSWORD: "cmcts2019"
+  REDIS_HOST: "183.91.11.56"
+  REDIS_PORT: "6379"
+  REDIS_DB: "4"
+  REDIS_DB_JOB: "5"
+  REDIS_PASSWORD: "CMCts@2019"
+  REDIS_KEYPREFIX: "VNP"
+  PG_HOST: "202.134.19.220"
+  PG_PORT: "31432"
+  PG_USER: "postgresadmin"
+  PG_PASSWORD: "CmcTs2021"
+  PG_DATABASE: "vnp_gateway"
+  PG_SCHEMA: "public"
+  TIME_ZONE: "Asia/Ho_Chi_Minh"
+  JOB_NUM_RECORD: "5000"
+  FOLDER_CSV: "csvs"
+  FOLDER_SESSION: "sessions"
+
+  #SCHEDULE
+  SCHEDULE_JOB: "*/59 * * * *"
+  SCHEDULE_BCCP_JOB: "*/59 * * * *"
+  SCHEDULE_BCCP_JOB_SF: "*/59 * * * *"
+  SCHEDULE_PULL_CASE: "*/59 * * * *"
+  SCHEDULE_DELETE: "0 */4 * * *"
+
+  #GW REDIS
+  GW_REDIS_HOST: "202.134.19.220"
+  GW_REDIS_PORT: "30379"
+  GW_REDIS_PASSWORD: "CmcTs2020"
+  GW_REDIS_DB_JOB: "3"
+
+  # If status = 1 -> validate is On, If status = 0 -> validate is off
+  VALID_STATUS: "1"
+
+  MPIT_URL_PULL_CASE: "http://case-uat.vnpost.vn:8040/services/GatewayAPI/MPITS_CRM/case/v1"
+  MPIT_USERNAME_AUTH_BASIC: "mpits2019"
+  MPIT_PASSWORD_AUTH_BASIC: "mpit$2o19"
+
+  SALT: "11"

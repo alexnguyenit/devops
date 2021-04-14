@@ -1,0 +1,18 @@
+--- Rollback Deployment ---
+# Kiểm tra các lần cập nhật (revision)
+kubectl rollout history deploy/deployapp
+
+# Để xem thông tin bản cập nhật 1 thì gõ lệnh
+kubectl rollout history deploy/deployapp --revision=1
+
+# Khi cần quay lại phiên bản cũ nào đó, ví dụ bản revision 1
+kubectl rollout undo deploy/deployapp --to-revision=1
+
+# Nếu muốn quay lại bản cập nhật trước gần nhất
+kubectl rollout undo deploy/mydeploy
+
+--- Scale Deployment ---
+# Scale thay đổi chỉ số replica (số lượng POD) của Deployment, ý nghĩa tương tự như scale đối với ReplicaSet trong phần trước. Ví dụ để scale với 10 POD thực hiện lệnh:
+kubectl scale deploy/deployapp --replicas=10
+# Muốn thiết lập scale tự động với số lượng POD trong khoảng min, max và thực hiện scale khi CPU của POD hoạt động ở mức 50% thì thực hiện
+kubectl autoscale deploy/deployapp --min=2 --max=5 --cpu-percent=50

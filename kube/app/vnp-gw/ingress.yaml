@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: app
+  namespace: vnp
+spec:
+  rules:
+    # Tên miền truy cập
+    - host: 202.134.19.220
+      http:
+        paths:
+          - path: /
+            backend:
+              # dịch vụ phục vụ tương ứng với tên miền và path
+              serviceName: vnp-gw
+              servicePort: 80

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vnp-gw
+  namespace: vnp
+spec:
+  selector:
+    app: vnp-gw
+  type: NodePort
+  ports:
+    - name: vnp-gw
+      port: 9002
+      protocol: TCP
+      targetPort: 9001
+      nodePort: 30901
