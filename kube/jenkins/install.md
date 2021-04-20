@@ -6,7 +6,8 @@ $ kubectl create namespace jenkins
 
 ## Create this deployment in the jenkins namespace:
 
-$ kubectl create -f jenkins.yaml --namespace jenkins
+$ kubectl apply -f . --namespace jenkins
+
 $ kubectl get pods -n jenkins
 
 ## Create the Service in the same namespace:
