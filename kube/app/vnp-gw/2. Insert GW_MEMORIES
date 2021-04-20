@@ -1,0 +1,5 @@
+// thay đổi memory_at bằng với timestamp ngày cần đẩy lại
+INSERT INTO public.gw_memories (id,memory_at,"object",operation,created_at,memory_end_at,job_id,status,updated_at,merchant) 
+VALUES ('767ae500-9d99-11eb-bcab-0242ac130002','1596735308000','case','pull','1618456800822','0','414',1,NULL,NULL),
+('41bba144-9d9c-11eb-90e7-0242ac130002','1617335005000','case','pull','1618458000818','1596735308000','416',1,NULL,NULL),
+('a74fc0d4-9d9d-11eb-aeb0-0242ac130002','1618458302000','case','pull','1618458600735','1617335005000','418',1,NULL,NULL);

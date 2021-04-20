@@ -441,4 +441,11 @@ INSERT INTO public.gw_sessions (id,consumer_key,consumer_secret,expired_at,creat
 ,('7c6266e0-9bc4-11eb-a045-0242ac130002','3MVG9G9pzCUSkzZvLnOoNdZiIwj_tksdiWkgmLnLluiLcegTVifSEdYHDDuX3_gY0P3Ee5vn4CXDM7OhAv.Wx','$2a$11$PhFV3lwd1vdQehlURtPl9.v9w3WJzzHaVOF.UnupxdfABr3FL/fx2',NULL,'1618255376761',NULL,'GateWay',NULL,NULL)
 ;
 
-CREATE INDEX job_select_merchant_idx ON public.gw_trackings USING btree (sf_job_id, number, operation, status, merchant, object)
+CREATE INDEX job_select_merchant_idx ON public.gw_trackings USING btree (sf_job_id, number, operation, status, merchant, object);
+
+ALTER TABLE public.gw_logs ALTER COLUMN save_at TYPE varchar(20) USING save_at::varchar;
+
+ALTER TABLE public.gw_logs ADD system_at timestamptz NULL DEFAULT now();
+
+ALTER TABLE public.gw_logs ALTER COLUMN created_at TYPE varchar(20) USING created_at::varchar;
+

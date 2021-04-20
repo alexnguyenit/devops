@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"E:/cmc/183.91.11.119/setup/vagrant","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"E:/cmc/183.91.11.119/setup/devops/vagrant","disabled":false,"__vagrantfile":true}}}
