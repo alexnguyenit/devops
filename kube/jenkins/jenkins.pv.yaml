@@ -16,7 +16,7 @@ spec:
 # kind: PersistentVolume
 # metadata:
 #   name: jenkins
-#   #annotations: 
+#   #annotations:
 #    #pv.beta.kubernetes.io/gid: "1000"
 # spec:
 #   capacity:
